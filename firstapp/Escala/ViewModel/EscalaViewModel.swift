@@ -19,6 +19,7 @@ class notaViewModel: ObservableObject {
     @Published var exigencia: Float = 0
     
     
+    // Esta funcion se llama desde la vista y se actualizan los datos
     func setParameters(pMax: String, nMaxima: String, nMinima: String, nAprobacion: String, nExigencia: String) -> () {
         
         self.puntajeMaximo = Int(pMax) ?? 0
@@ -31,47 +32,37 @@ class notaViewModel: ObservableObject {
         
     }
     
+    // Esta funcion retorna la nota obtenida
     func getNota(puntos: Float) -> String {
         
-        var puntajeAlto = (exigencia * Float(puntajeMaximo))
+        let puntajeAlto = (exigencia * Float(puntajeMaximo))
         
+        
+        // Verifica si es que el punto obtenido es MENOR al punto necesario para aprobar (4.0)
         if puntos < puntajeAlto {
-            //return "formula 1"
-            //(notaAprobacion - notaMinima) * (puntos / (exigencia * puntajeMaximo)) + notaMinima
             
             let resultado =  (((notaAprobacion - notaMinima) * (puntos / (exigencia * Float(puntajeMaximo))) + notaMinima)) / 10
             
             return "\(round(resultado*10) / 10)"
             
-
+            
+            
+        // Verifica si es que el punto obtenido es MAYOR al punto necesario para aprobar (4.0)
         } else if puntos >= puntajeAlto {
             
             let calculo1 = (puntos - ((Float(exigencia * Float(puntajeMaximo)))))
             let calculo2 = (1 - exigencia) * Float(puntajeMaximo) + 0.000001
-
             
             let resultado = ( ((notaMaxima - notaAprobacion) / 10) * (calculo1 / calculo2) + (notaAprobacion / 10))
-                              
-           return "\(round(resultado*10) / 10)"
             
-//            if round(resultado) > resultado {
-//
-//            }
-
+            return "\(round(resultado*10) / 10)"
+            
+            
         } else {
+            
             return "Error"
         }
-                
-        
-
         
     }
     
-    
 }
-            /*
-             (notaMaxima - notaAprobacion) / 10) = 3
-             ((puntos - (exigencia * Float(puntajeMaximo))) = 1
-             (1 - exigencia) * Float(puntajeMaximo) = 12
-             (notaAprobacion / 10) = 4
-             */

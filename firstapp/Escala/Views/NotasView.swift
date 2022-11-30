@@ -35,15 +35,23 @@ struct NotasView: View {
             } else {
                 
                 ForEach(0...vm.puntajeMaximo, id: \.self) { puntaje in
-                    //Text("\(puntaje) -> \( String(format: "%.1f", vm.getNota(puntos: Float(puntaje))) )")
                     
-                    Text("\(puntaje) -> \( vm.getNota(puntos: Float(puntaje)))")
+                    VStack {
+                        Text("\(puntaje) -> \( vm.getNota(puntos: Float(puntaje)))")
+                            .frame(width: 100, height: 50)
+                            .background(Color("textFieldBackground"))
+                            .cornerRadius(5)
+                            
+                    }
+                    
+                        
                 }
                 
             }
             
             
         }
+        .scrollIndicators(.hidden)
         .onAppear {
                     
             DispatchQueue.main.asyncAfter(deadline: .now()+1.5, execute: {
@@ -58,6 +66,6 @@ struct NotasView: View {
 
 struct NotasView_Previews: PreviewProvider {
     static var previews: some View {
-        NotasView(puntajeMaximo: "0", notaMaxima: "0", notaMinima: "0", notaAprobacion: "0", notaExigencia: "0")
+        NotasView(puntajeMaximo: "40", notaMaxima: "70", notaMinima: "10", notaAprobacion: "40", notaExigencia: "60")
     }
 }

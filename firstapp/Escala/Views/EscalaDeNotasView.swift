@@ -20,25 +20,39 @@ struct EscalaDeNotasView: View {
     
     
     @FocusState var isFocused: Bool
-    
+    @State var info: Bool = false
     
     
     var body: some View {
         
-        
-       
-            ScrollView {
-                    
-                Text("Escalas")
-                    .font(.title)
-                    .padding()
-        
+        VStack {
+            
+            VStack(spacing: 20) {
+                Text("Generador de escala")
+                    .font(.system(size: 35))
+                    .padding(.top, 80)
                 
-                VStack {
+                Button {
+                    
+                    info.toggle()
+                    
+                } label: {
+                    Image(systemName: "questionmark.circle")
+                        .resizable()
+                        .frame(width: 25, height: 25)
+                        .foregroundColor(.black)
+                }
+                
+
+                
+            }
+            
+                
+                VStack{
                     
                     HStack {
                         
-                        VStack {
+                        VStack(spacing: 2) {
                             Text("Exigencia")
                                 .font(.caption)
                             
@@ -47,7 +61,7 @@ struct EscalaDeNotasView: View {
                                 .focused($isFocused)
                         }
                         
-                        VStack {
+                        VStack(spacing: 2) {
                             Text("Nota Maxima")
                                 .font(.caption)
                             
@@ -60,7 +74,7 @@ struct EscalaDeNotasView: View {
                     
                     HStack {
                         
-                        VStack {
+                        VStack(spacing: 2) {
                             Text("Nota Minima")
                                 .font(.caption)
                             
@@ -70,7 +84,7 @@ struct EscalaDeNotasView: View {
                         }
                         
                         
-                        VStack {
+                        VStack(spacing: 2) {
                             Text("Nota Aprobacion")
                                 .font(.caption)
                             
@@ -83,12 +97,13 @@ struct EscalaDeNotasView: View {
                     
                     HStack {
                         
-                        VStack {
+                        VStack(spacing: 2) {
                             Text("Puntaje Maximo")
                                 .font(.caption)
                             
                             TextField("0", text: $pMaximo)
-                                .modifier(TextFieldViewModifier())
+                                .font(.system(size: 45))
+                                .modifier(TextFieldViewModifier(maxWidthSize: 200))
                                 .focused($isFocused)
                         }
                         
@@ -113,25 +128,20 @@ struct EscalaDeNotasView: View {
                             .padding(.init(top: 65, leading: 80, bottom:80, trailing: 80))
                     }
                     
-                    
-                    
-                    
+        
                 }
                 .padding(.top, 40)
             } // ScrollView End
-            .onAppear()
+        .sheet(isPresented: $info) {
+            
+            InfoSheet()
+            
+        }
         
        
         
     }
     
-    
-    
-    func getNota() -> Float {
-            
-        return 0.0
-        
-    }
 }
 
 struct EscalaDeNotasView_Previews: PreviewProvider {
