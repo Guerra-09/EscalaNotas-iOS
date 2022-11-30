@@ -8,21 +8,16 @@
 
 import SwiftUI
 
-
-
-
-
-
 struct EscalaDeNotasView: View {
     
-    
-    @ObservedObject var vm: notaViewModel = notaViewModel()
+    @ObservedObject var vm = notaViewModel()
     
     @State var pMaximo: String = "30"
     @State var nMaxima: String = "70"
     @State var nMinima: String = "10"
     @State var nAprobacion: String = "40"
     @State var nExigencia: String = "60"
+    
     
     @FocusState var isFocused: Bool
     
@@ -52,7 +47,6 @@ struct EscalaDeNotasView: View {
                                 .focused($isFocused)
                         }
                         
-                        
                         VStack {
                             Text("Nota Maxima")
                                 .font(.caption)
@@ -61,8 +55,6 @@ struct EscalaDeNotasView: View {
                                 .modifier(TextFieldViewModifier())
                                 .focused($isFocused)
                         }
-                        
-                        
                     }
                     
                     
@@ -104,12 +96,13 @@ struct EscalaDeNotasView: View {
                             
                     }
                     
-                    
+           
                     NavigationLink {
-                        NotasView(pMaximo: pMaximo, nMaxima: nMaxima, nMinima: nMinima, nAprobacion: nAprobacion, nExigencia: nExigencia)
-                        
+
+                        NotasView(puntajeMaximo: pMaximo, notaMaxima: nMaxima, notaMinima: nMinima, notaAprobacion: nAprobacion, notaExigencia: nExigencia)
+
                     } label: {
-                        
+
                         Text("Calcular \(Image(systemName: "paperplane"))")
                             .font(.title)
                             .frame(height: 70)
@@ -122,9 +115,11 @@ struct EscalaDeNotasView: View {
                     
                     
                     
+                    
                 }
                 .padding(.top, 40)
             } // ScrollView End
+            .onAppear()
         
        
         
