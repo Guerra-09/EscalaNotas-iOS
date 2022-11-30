@@ -46,7 +46,7 @@ struct NotasView: View {
         }
         .onAppear {
                     
-            DispatchQueue.main.asyncAfter(deadline: .now()+1.0, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now()+1.5, execute: {
                 isLoading.toggle()
             })
             

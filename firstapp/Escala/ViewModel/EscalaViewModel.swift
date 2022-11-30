@@ -39,14 +39,25 @@ class notaViewModel: ObservableObject {
             //return "formula 1"
             //(notaAprobacion - notaMinima) * (puntos / (exigencia * puntajeMaximo)) + notaMinima
             
-            return "\((((notaAprobacion - notaMinima) * (puntos / (exigencia * Float(puntajeMaximo))) + notaMinima)) / 10)"
+            let resultado =  (((notaAprobacion - notaMinima) * (puntos / (exigencia * Float(puntajeMaximo))) + notaMinima)) / 10
+            
+            return "\(round(resultado*10) / 10)"
             
 
         } else if puntos >= puntajeAlto {
             
-            return "\( (7-4) * (puntos - (exigencia * Float(puntajeMaximo)) ) / (Float(puntajeMaximo) * (1 - exigencia)) + 4 )"
+            let calculo1 = (puntos - ((Float(exigencia * Float(puntajeMaximo)))))
+            let calculo2 = (1 - exigencia) * Float(puntajeMaximo) + 0.000001
+
             
+            let resultado = ( ((notaMaxima - notaAprobacion) / 10) * (calculo1 / calculo2) + (notaAprobacion / 10))
+                              
+           return "\(round(resultado*10) / 10)"
             
+//            if round(resultado) > resultado {
+//
+//            }
+
         } else {
             return "Error"
         }
@@ -58,3 +69,9 @@ class notaViewModel: ObservableObject {
     
     
 }
+            /*
+             (notaMaxima - notaAprobacion) / 10) = 3
+             ((puntos - (exigencia * Float(puntajeMaximo))) = 1
+             (1 - exigencia) * Float(puntajeMaximo) = 12
+             (notaAprobacion / 10) = 4
+             */
