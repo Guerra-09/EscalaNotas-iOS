@@ -59,6 +59,7 @@ struct EscalaDeNotasView: View {
                             TextField("0", text: $nExigencia)
                                 .modifier(TextFieldViewModifier())
                                 .focused($isFocused)
+                                
                         }
                         
                         VStack(spacing: 2) {
@@ -68,6 +69,7 @@ struct EscalaDeNotasView: View {
                             TextField("0", text: $nMaxima)
                                 .modifier(TextFieldViewModifier())
                                 .focused($isFocused)
+                                
                         }
                     }
                     
@@ -125,8 +127,9 @@ struct EscalaDeNotasView: View {
                             .background(.blue)
                             .foregroundColor(.white)
                             .cornerRadius(15)
-                            .padding(.init(top: 65, leading: 80, bottom:80, trailing: 80))
+                            
                     }
+                    .padding(.init(top: 65, leading: 80, bottom:80, trailing: 80))
                     
         
                 }

@@ -33,7 +33,7 @@ class notaViewModel: ObservableObject {
     }
     
     // Esta funcion retorna la nota obtenida
-    func getNota(puntos: Float) -> String {
+    func getAverage(puntos: Float) -> String {
         
         let puntajeAlto = (exigencia * Float(puntajeMaximo))
         

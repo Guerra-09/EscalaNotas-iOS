@@ -18,6 +18,13 @@
 		66A1CEEA2902CCE9007960A1 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A1CEE92902CCE9007960A1 /* ProfileView.swift */; };
 		66A1CEEC2902CD6C007960A1 /* EscalaDeNotasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A1CEEB2902CD6C007960A1 /* EscalaDeNotasView.swift */; };
 		66A1CEEE2902CD8D007960A1 /* PromedioNotas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A1CEED2902CD8D007960A1 /* PromedioNotas.swift */; };
+		66A92F662937F8A80015CCC8 /* GlobalCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A92F652937F8A80015CCC8 /* GlobalCode.swift */; };
+		66A92F682938190F0015CCC8 /* NotaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A92F672938190F0015CCC8 /* NotaModel.swift */; };
+		66A92F6D29381AD20015CCC8 /* NotaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A92F6C29381AD20015CCC8 /* NotaViewModel.swift */; };
+		66A92F7029381C140015CCC8 /* PromedioComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A92F6F29381C140015CCC8 /* PromedioComponents.swift */; };
+		66A92F7629382E940015CCC8 /* PerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A92F7529382E940015CCC8 /* PerfilView.swift */; };
+		66A92F7A2939A8990015CCC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A92F792939A8990015CCC8 /* ContentView.swift */; };
+		66AFDC31293A7D0B004F777D /* EscalaModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFDC30293A7D0B004F777D /* EscalaModifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,9 +37,16 @@
 		66A1CEDA2902C640007960A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66A1CEDD2902C640007960A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		66A1CEE72902C702007960A1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		66A1CEE92902CCE9007960A1 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = "../New Group1/ProfileView.swift"; sourceTree = "<group>"; };
+		66A1CEE92902CCE9007960A1 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		66A1CEEB2902CD6C007960A1 /* EscalaDeNotasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscalaDeNotasView.swift; sourceTree = "<group>"; };
 		66A1CEED2902CD8D007960A1 /* PromedioNotas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromedioNotas.swift; sourceTree = "<group>"; };
+		66A92F652937F8A80015CCC8 /* GlobalCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GlobalCode.swift; path = firstapp/Global/GlobalCode.swift; sourceTree = SOURCE_ROOT; };
+		66A92F672938190F0015CCC8 /* NotaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotaModel.swift; path = FirstApp/Promedio/Model/NotaModel.swift; sourceTree = SOURCE_ROOT; };
+		66A92F6C29381AD20015CCC8 /* NotaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotaViewModel.swift; path = firstapp/Promedio/ViewModel/NotaViewModel.swift; sourceTree = SOURCE_ROOT; };
+		66A92F6F29381C140015CCC8 /* PromedioComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PromedioComponents.swift; path = firstapp/Promedio/Others/PromedioComponents.swift; sourceTree = SOURCE_ROOT; };
+		66A92F7529382E940015CCC8 /* PerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PerfilView.swift; path = firstapp/Perfil/Components/PerfilView.swift; sourceTree = SOURCE_ROOT; };
+		66A92F792939A8990015CCC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = firstapp/ContentView.swift; sourceTree = SOURCE_ROOT; };
+		66AFDC30293A7D0B004F777D /* EscalaModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EscalaModifiers.swift; path = firstapp/Escala/Others/EscalaModifiers.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,12 +85,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		66562E8A293658BD00F06455 /* Ohters */ = {
+		66562E8A293658BD00F06455 /* Others */ = {
 			isa = PBXGroup;
 			children = (
 				669F3D8529250B410003E100 /* EscalaComponents.swift */,
+				66AFDC30293A7D0B004F777D /* EscalaModifiers.swift */,
 			);
-			path = Ohters;
+			path = Others;
 			sourceTree = "<group>";
 		};
 		66A1CECA2902C63E007960A1 = {
@@ -98,13 +113,15 @@
 		66A1CED52902C63E007960A1 /* FirstApp */ = {
 			isa = PBXGroup;
 			children = (
-				66A1CED62902C63E007960A1 /* FirstAppApp.swift */,
 				66A1CEE72902C702007960A1 /* MainView.swift */,
+				66A1CED62902C63E007960A1 /* FirstAppApp.swift */,
+				66A92F642937F88F0015CCC8 /* Global */,
 				66A1CEF02902DB6B007960A1 /* Escala */,
 				66A1CEEF2902DB54007960A1 /* Promedio */,
 				66A1CEF12902DB7B007960A1 /* Perfil */,
 				66A1CEDA2902C640007960A1 /* Assets.xcassets */,
 				66A1CEDC2902C640007960A1 /* Preview Content */,
+				66A92F792939A8990015CCC8 /* ContentView.swift */,
 			);
 			path = FirstApp;
 			sourceTree = "<group>";
@@ -120,7 +137,10 @@
 		66A1CEEF2902DB54007960A1 /* Promedio */ = {
 			isa = PBXGroup;
 			children = (
-				66A1CEED2902CD8D007960A1 /* PromedioNotas.swift */,
+				66A92F6E29381C020015CCC8 /* Others */,
+				66A92F6B293819720015CCC8 /* View */,
+				66A92F6A2938196B0015CCC8 /* ViewModel */,
+				66A92F69293819640015CCC8 /* Model */,
 			);
 			path = Promedio;
 			sourceTree = "<group>";
@@ -128,7 +148,7 @@
 		66A1CEF02902DB6B007960A1 /* Escala */ = {
 			isa = PBXGroup;
 			children = (
-				66562E8A293658BD00F06455 /* Ohters */,
+				66562E8A293658BD00F06455 /* Others */,
 				66562E89293658B400F06455 /* Model */,
 				66562E88293658A700F06455 /* ViewModel */,
 				66562E872936589D00F06455 /* Views */,
@@ -139,9 +159,82 @@
 		66A1CEF12902DB7B007960A1 /* Perfil */ = {
 			isa = PBXGroup;
 			children = (
-				66A1CEE92902CCE9007960A1 /* ProfileView.swift */,
+				66A92F7429382E860015CCC8 /* Components */,
+				66A92F7329382E550015CCC8 /* Model */,
+				66A92F7229382E490015CCC8 /* ViewModel */,
+				66A92F7129382E420015CCC8 /* View */,
 			);
 			path = Perfil;
+			sourceTree = "<group>";
+		};
+		66A92F642937F88F0015CCC8 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				66A92F652937F8A80015CCC8 /* GlobalCode.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		66A92F69293819640015CCC8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				66A92F672938190F0015CCC8 /* NotaModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		66A92F6A2938196B0015CCC8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				66A92F6C29381AD20015CCC8 /* NotaViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		66A92F6B293819720015CCC8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				66A1CEED2902CD8D007960A1 /* PromedioNotas.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		66A92F6E29381C020015CCC8 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				66A92F6F29381C140015CCC8 /* PromedioComponents.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		66A92F7129382E420015CCC8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				66A1CEE92902CCE9007960A1 /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		66A92F7229382E490015CCC8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		66A92F7329382E550015CCC8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		66A92F7429382E860015CCC8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				66A92F7529382E940015CCC8 /* PerfilView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,10 +310,17 @@
 				669F3D8629250B410003E100 /* EscalaComponents.swift in Sources */,
 				66A1CEEC2902CD6C007960A1 /* EscalaDeNotasView.swift in Sources */,
 				66A1CED72902C63E007960A1 /* FirstAppApp.swift in Sources */,
+				66A92F7029381C140015CCC8 /* PromedioComponents.swift in Sources */,
 				66A1CEEA2902CCE9007960A1 /* ProfileView.swift in Sources */,
+				66A92F6D29381AD20015CCC8 /* NotaViewModel.swift in Sources */,
 				66562E8E29365CAF00F06455 /* NotasView.swift in Sources */,
+				66A92F662937F8A80015CCC8 /* GlobalCode.swift in Sources */,
+				66A92F7629382E940015CCC8 /* PerfilView.swift in Sources */,
 				66A1CEE82902C702007960A1 /* MainView.swift in Sources */,
 				664405C529252C4E00C9187A /* EscalaModel.swift in Sources */,
+				66AFDC31293A7D0B004F777D /* EscalaModifiers.swift in Sources */,
+				66A92F7A2939A8990015CCC8 /* ContentView.swift in Sources */,
+				66A92F682938190F0015CCC8 /* NotaModel.swift in Sources */,
 				66A1CEEE2902CD8D007960A1 /* PromedioNotas.swift in Sources */,
 				664405C729252C5D00C9187A /* EscalaViewModel.swift in Sources */,
 			);

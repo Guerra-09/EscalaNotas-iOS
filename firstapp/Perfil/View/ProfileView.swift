@@ -14,23 +14,20 @@ struct ProfileView: View {
     var body: some View {
         
         
-        VStack {
-            ZStack {
-                
-                Circle()
-                    .foregroundColor(.blue)
-                
-                Image(systemName: "person")
-                    .resizable()
-                    .frame(width: 150, height: 150)
-                    .foregroundColor(.white)
-                
-            }
-            .frame(width: 300, height: 300)
+        
+        ScrollView {
+            
             
             Text(name)
                 .font(.title)
                 .padding(30)
+            
+            Divider()
+                .background(.gray)
+            
+            VStack {
+                
+            }
             
         
             

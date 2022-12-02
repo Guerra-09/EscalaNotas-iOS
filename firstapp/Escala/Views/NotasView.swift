@@ -25,6 +25,7 @@ struct NotasView: View {
         ScrollView {
             
             Text("Notas...")
+                .font(.title)
             
             if isLoading {
                 
@@ -34,23 +35,38 @@ struct NotasView: View {
                 
             } else {
                 
-                ForEach(0...vm.puntajeMaximo, id: \.self) { puntaje in
+                HStack {
                     
                     VStack {
-                        Text("\(puntaje) -> \( vm.getNota(puntos: Float(puntaje)))")
-                            .frame(width: 100, height: 50)
-                            .background(Color("textFieldBackground"))
-                            .cornerRadius(5)
+                        ForEach(0...vm.puntajeMaximo / 2, id: \.self) { puntaje in
+                           
+                            Text("\(puntaje) -> \(vm.getAverage(puntos: Float(puntaje)))")
+                                .modifier(NotaModifier(color: .red))
                             
+                                
+                        }
                     }
                     
-                        
+                    
+                    VStack {
+                        ForEach(vm.puntajeMaximo / 2...vm.puntajeMaximo, id: \.self) { puntaje in
+                           
+                            Text("\(puntaje) -> \(vm.getAverage(puntos: Float(puntaje)))")
+                                .frame(width: 100, height: 50)
+                                .background(Color("textFieldBackground"))
+                                .cornerRadius(5)
+                                
+                        }
+                    }
                 }
+                 
                 
+                
+                
+               
             }
-            
-            
         }
+        
         .scrollIndicators(.hidden)
         .onAppear {
                     
@@ -59,13 +75,17 @@ struct NotasView: View {
             })
             
             vm.setParameters(pMax: puntajeMaximo, nMaxima: notaMaxima, nMinima: notaMinima, nAprobacion: notaAprobacion, nExigencia: notaExigencia)
+        
+              
             
         }
     }
+    
+    
 }
 
 struct NotasView_Previews: PreviewProvider {
     static var previews: some View {
-        NotasView(puntajeMaximo: "40", notaMaxima: "70", notaMinima: "10", notaAprobacion: "40", notaExigencia: "60")
+        NotasView(puntajeMaximo: "30", notaMaxima: "70", notaMinima: "10", notaAprobacion: "40", notaExigencia: "60")
     }
 }

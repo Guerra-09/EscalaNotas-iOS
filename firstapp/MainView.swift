@@ -15,8 +15,6 @@ struct MainView: View {
                     Label("Escala de notas", systemImage: "doc.text.fill")
                 }
             
-            
-            
             PromedioNotas()
                 .tabItem {
                     Label("Promedio", systemImage: "sum")

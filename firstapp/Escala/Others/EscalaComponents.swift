@@ -56,34 +56,40 @@ struct TextFieldViewModifier: ViewModifier {
     
 }
 
-//struct NotasModifier: ViewModifier {
-//    
-//    func body(content: Content) -> some View {
-//        content
-//            
-//    
-//}
 
 struct InfoSheet: View {
     
     @State var title: String = "Informacion adicional"
     
+    @State var info1: String = "Para la facilidad del lector y el programador detras, se representaran los datos con enteros pero luego en la practica se dividen por 10 (A excepcion de la exigencia) de manera tal que la nota maxima (en Chile) es 7.0 y para fines practicos de conversion se expresa como 70."
+    
     @State var exigenciaText: String = "Que es la exigencia?\nLa exigencia es la fracción del puntaje total que el evaluador determina como necesaria para considerar la evaluación como aprobada"
+    
+    @State var soon: String = "Se agregará más informacion al finalizar la app"
     
     
     var body: some View {
         
         VStack {
-            
+        
             Text(title)
                 .font(.title)
             
-            Text(exigenciaText)
+            Text(info1)
                 .font(.body)
                 .multilineTextAlignment(.center)
-                .frame(maxWidth: 350, maxHeight: 100)
+                .frame(maxWidth: 370, maxHeight: 150)
             
-        }
+            Text(soon)
+                .foregroundColor(.red)
+                .padding(.vertical, 50)
+        
+            }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color("textFieldBackground"))
+        
+        
+        
         
     }
 }

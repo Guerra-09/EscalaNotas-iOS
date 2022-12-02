@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+// This could be use in a future...
 
 struct NotasModel: Identifiable {
     
@@ -18,5 +18,4 @@ struct NotasModel: Identifiable {
     let exigencia: Int
     let puntajeObtenido: Int
 
-    
 }
