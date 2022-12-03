@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		663C68D9293BD6630030C4A9 /* ViewPassing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C68D8293BD6630030C4A9 /* ViewPassing.swift */; };
 		664405C529252C4E00C9187A /* EscalaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664405C429252C4E00C9187A /* EscalaModel.swift */; };
 		664405C729252C5D00C9187A /* EscalaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664405C629252C5D00C9187A /* EscalaViewModel.swift */; };
 		66562E8E29365CAF00F06455 /* NotasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66562E8D29365CAF00F06455 /* NotasView.swift */; };
@@ -23,11 +24,16 @@
 		66A92F6D29381AD20015CCC8 /* NotaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A92F6C29381AD20015CCC8 /* NotaViewModel.swift */; };
 		66A92F7029381C140015CCC8 /* PromedioComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A92F6F29381C140015CCC8 /* PromedioComponents.swift */; };
 		66A92F7629382E940015CCC8 /* PerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A92F7529382E940015CCC8 /* PerfilView.swift */; };
-		66A92F7A2939A8990015CCC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A92F792939A8990015CCC8 /* ContentView.swift */; };
 		66AFDC31293A7D0B004F777D /* EscalaModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFDC30293A7D0B004F777D /* EscalaModifiers.swift */; };
+		66AFDC33293A8EF1004F777D /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFDC32293A8EF1004F777D /* BackButton.swift */; };
+		66AFDC35293A9B14004F777D /* PerfilModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFDC34293A9B14004F777D /* PerfilModel.swift */; };
+		66AFDC37293A9BCB004F777D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFDC36293A9BCB004F777D /* ProfileViewModel.swift */; };
+		66AFDC39293A9C67004F777D /* MateriasModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFDC38293A9C67004F777D /* MateriasModel.swift */; };
+		66AFDC3B293AA2D2004F777D /* SaveNotas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFDC3A293AA2D2004F777D /* SaveNotas.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		663C68D8293BD6630030C4A9 /* ViewPassing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewPassing.swift; path = firstapp/Testing/ViewPassing.swift; sourceTree = SOURCE_ROOT; };
 		664405C429252C4E00C9187A /* EscalaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscalaModel.swift; sourceTree = "<group>"; };
 		664405C629252C5D00C9187A /* EscalaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscalaViewModel.swift; sourceTree = "<group>"; };
 		66562E8D29365CAF00F06455 /* NotasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotasView.swift; path = firstapp/Escala/Views/NotasView.swift; sourceTree = SOURCE_ROOT; };
@@ -45,8 +51,12 @@
 		66A92F6C29381AD20015CCC8 /* NotaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotaViewModel.swift; path = firstapp/Promedio/ViewModel/NotaViewModel.swift; sourceTree = SOURCE_ROOT; };
 		66A92F6F29381C140015CCC8 /* PromedioComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PromedioComponents.swift; path = firstapp/Promedio/Others/PromedioComponents.swift; sourceTree = SOURCE_ROOT; };
 		66A92F7529382E940015CCC8 /* PerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PerfilView.swift; path = firstapp/Perfil/Components/PerfilView.swift; sourceTree = SOURCE_ROOT; };
-		66A92F792939A8990015CCC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = firstapp/ContentView.swift; sourceTree = SOURCE_ROOT; };
 		66AFDC30293A7D0B004F777D /* EscalaModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EscalaModifiers.swift; path = firstapp/Escala/Others/EscalaModifiers.swift; sourceTree = SOURCE_ROOT; };
+		66AFDC32293A8EF1004F777D /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BackButton.swift; path = firstapp/Global/BackButton.swift; sourceTree = SOURCE_ROOT; };
+		66AFDC34293A9B14004F777D /* PerfilModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PerfilModel.swift; path = firstapp/Perfil/Model/PerfilModel.swift; sourceTree = SOURCE_ROOT; };
+		66AFDC36293A9BCB004F777D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewModel.swift; path = firstapp/Perfil/ViewModel/ProfileViewModel.swift; sourceTree = SOURCE_ROOT; };
+		66AFDC38293A9C67004F777D /* MateriasModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MateriasModel.swift; path = firstapp/Perfil/Model/MateriasModel.swift; sourceTree = SOURCE_ROOT; };
+		66AFDC3A293AA2D2004F777D /* SaveNotas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SaveNotas.swift; path = firstapp/Perfil/View/SaveNotas.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		663C68D7293BD6560030C4A9 /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				663C68D8293BD6630030C4A9 /* ViewPassing.swift */,
+			);
+			path = Testing;
+			sourceTree = "<group>";
+		};
 		66562E872936589D00F06455 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,15 +131,15 @@
 		66A1CED52902C63E007960A1 /* FirstApp */ = {
 			isa = PBXGroup;
 			children = (
-				66A1CEE72902C702007960A1 /* MainView.swift */,
+				663C68D7293BD6560030C4A9 /* Testing */,
 				66A1CED62902C63E007960A1 /* FirstAppApp.swift */,
+				66A1CEE72902C702007960A1 /* MainView.swift */,
 				66A92F642937F88F0015CCC8 /* Global */,
 				66A1CEF02902DB6B007960A1 /* Escala */,
 				66A1CEEF2902DB54007960A1 /* Promedio */,
 				66A1CEF12902DB7B007960A1 /* Perfil */,
 				66A1CEDA2902C640007960A1 /* Assets.xcassets */,
 				66A1CEDC2902C640007960A1 /* Preview Content */,
-				66A92F792939A8990015CCC8 /* ContentView.swift */,
 			);
 			path = FirstApp;
 			sourceTree = "<group>";
@@ -171,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				66A92F652937F8A80015CCC8 /* GlobalCode.swift */,
+				66AFDC32293A8EF1004F777D /* BackButton.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -211,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				66A1CEE92902CCE9007960A1 /* ProfileView.swift */,
+				66AFDC3A293AA2D2004F777D /* SaveNotas.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,6 +238,7 @@
 		66A92F7229382E490015CCC8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				66AFDC36293A9BCB004F777D /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -225,6 +246,8 @@
 		66A92F7329382E550015CCC8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				66AFDC34293A9B14004F777D /* PerfilModel.swift */,
+				66AFDC38293A9C67004F777D /* MateriasModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -307,19 +330,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				663C68D9293BD6630030C4A9 /* ViewPassing.swift in Sources */,
 				669F3D8629250B410003E100 /* EscalaComponents.swift in Sources */,
 				66A1CEEC2902CD6C007960A1 /* EscalaDeNotasView.swift in Sources */,
+				66AFDC39293A9C67004F777D /* MateriasModel.swift in Sources */,
 				66A1CED72902C63E007960A1 /* FirstAppApp.swift in Sources */,
 				66A92F7029381C140015CCC8 /* PromedioComponents.swift in Sources */,
 				66A1CEEA2902CCE9007960A1 /* ProfileView.swift in Sources */,
+				66AFDC3B293AA2D2004F777D /* SaveNotas.swift in Sources */,
 				66A92F6D29381AD20015CCC8 /* NotaViewModel.swift in Sources */,
 				66562E8E29365CAF00F06455 /* NotasView.swift in Sources */,
 				66A92F662937F8A80015CCC8 /* GlobalCode.swift in Sources */,
+				66AFDC33293A8EF1004F777D /* BackButton.swift in Sources */,
 				66A92F7629382E940015CCC8 /* PerfilView.swift in Sources */,
 				66A1CEE82902C702007960A1 /* MainView.swift in Sources */,
+				66AFDC35293A9B14004F777D /* PerfilModel.swift in Sources */,
+				66AFDC37293A9BCB004F777D /* ProfileViewModel.swift in Sources */,
 				664405C529252C4E00C9187A /* EscalaModel.swift in Sources */,
 				66AFDC31293A7D0B004F777D /* EscalaModifiers.swift in Sources */,
-				66A92F7A2939A8990015CCC8 /* ContentView.swift in Sources */,
 				66A92F682938190F0015CCC8 /* NotaModel.swift in Sources */,
 				66A1CEEE2902CD8D007960A1 /* PromedioNotas.swift in Sources */,
 				664405C729252C5D00C9187A /* EscalaViewModel.swift in Sources */,

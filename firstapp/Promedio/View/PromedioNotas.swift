@@ -13,7 +13,7 @@ struct PromedioNotas: View {
     
     @StateObject private var vm: NotaViewModel = NotaViewModel()
     
-    @State private var notasModel = [NotaModel]()
+   //@State private var notasModel = [NotaModel]()
     
     @State var newNota : String = ""
     

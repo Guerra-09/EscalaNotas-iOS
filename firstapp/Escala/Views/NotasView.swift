@@ -24,8 +24,9 @@ struct NotasView: View {
         
         ScrollView {
             
-            Text("Notas...")
-                .font(.title)
+            Text("Notas")
+                .font(.system(size: 40))
+                .padding(.bottom, 60)
             
             if isLoading {
                 
@@ -35,29 +36,30 @@ struct NotasView: View {
                 
             } else {
                 
-                HStack {
-                    
-                    VStack {
-                        ForEach(0...vm.puntajeMaximo / 2, id: \.self) { puntaje in
-                           
-                            Text("\(puntaje) -> \(vm.getAverage(puntos: Float(puntaje)))")
-                                .modifier(NotaModifier(color: .red))
-                            
+                
+                Grid {
+                    GridRow(alignment: .top) {
+                        VStack {
+                            ForEach(0...vm.puntajeMaximo / 2, id: \.self) { puntaje in
+                               
+                                Text("\(puntaje) -> \(vm.getAverage(puntos: Float(puntaje)))")
+                                    .modifier(NotaModifier(isRed: isBad(Nota: vm.getAverage(puntos: Float(puntaje)) )))
                                 
+                                    
+                            }
+                        }
+                        
+                        
+                        VStack {
+                            ForEach((vm.puntajeMaximo / 2)+1...vm.puntajeMaximo, id: \.self) { puntaje in
+                               
+                                Text("\(puntaje) -> \(vm.getAverage(puntos: Float(puntaje)))")
+                                    .modifier(NotaModifier(isRed: isBad(Nota: vm.getAverage(puntos: Float(puntaje)) )))
+                                    
+                            }
                         }
                     }
                     
-                    
-                    VStack {
-                        ForEach(vm.puntajeMaximo / 2...vm.puntajeMaximo, id: \.self) { puntaje in
-                           
-                            Text("\(puntaje) -> \(vm.getAverage(puntos: Float(puntaje)))")
-                                .frame(width: 100, height: 50)
-                                .background(Color("textFieldBackground"))
-                                .cornerRadius(5)
-                                
-                        }
-                    }
                 }
                  
                 
@@ -75,10 +77,24 @@ struct NotasView: View {
             })
             
             vm.setParameters(pMax: puntajeMaximo, nMaxima: notaMaxima, nMinima: notaMinima, nAprobacion: notaAprobacion, nExigencia: notaExigencia)
-        
-              
-            
         }
+    }
+    
+    
+    
+    // Verifica que si el numero entregado esta por debajo de la nota de aprobacion
+    func isBad(Nota data: String) -> Bool {
+        
+        var holdValue: Float = 0.0
+        
+        if let notaObtenida = Float(data) {
+            holdValue = notaObtenida
+        }
+        
+        if holdValue >= vm.notaAprobacion / 10 {
+            return false
+        }
+        return true
     }
     
     
@@ -86,6 +102,9 @@ struct NotasView: View {
 
 struct NotasView_Previews: PreviewProvider {
     static var previews: some View {
-        NotasView(puntajeMaximo: "30", notaMaxima: "70", notaMinima: "10", notaAprobacion: "40", notaExigencia: "60")
+        NavigationView {
+            NotasView(puntajeMaximo: "43", notaMaxima: "70", notaMinima: "10", notaAprobacion: "40", notaExigencia: "60")
+        }
+        
     }
 }

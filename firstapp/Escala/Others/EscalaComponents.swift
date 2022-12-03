@@ -51,7 +51,7 @@ struct TextFieldViewModifier: ViewModifier {
             .multilineTextAlignment(.center)
             .font(.system(size: 30))
             .padding(.horizontal, 5)
-            .padding(.vertical, 10)
+            .padding(.vertical, 5)
     }
     
 }

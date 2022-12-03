@@ -21,13 +21,14 @@ struct EscalaDeNotasView: View {
     
     @FocusState var isFocused: Bool
     @State var info: Bool = false
+    @State var escalaSheet: Bool = false
     
     
     var body: some View {
         
-        VStack {
+        ScrollView {
             
-            VStack(spacing: 20) {
+            VStack(spacing: 5) {
                 Text("Generador de escala")
                     .font(.system(size: 35))
                     .padding(.top, 80)
@@ -52,17 +53,18 @@ struct EscalaDeNotasView: View {
                     
                     HStack {
                         
-                        VStack(spacing: 2) {
-                            Text("Exigencia")
+                        VStack(spacing: 1) {
+                            
+                            Text("Nota Minima")
                                 .font(.caption)
                             
-                            TextField("0", text: $nExigencia)
+                            TextField("0", text: $nMinima)
                                 .modifier(TextFieldViewModifier())
                                 .focused($isFocused)
                                 
                         }
                         
-                        VStack(spacing: 2) {
+                        VStack(spacing: 1) {
                             Text("Nota Maxima")
                                 .font(.caption)
                             
@@ -76,17 +78,8 @@ struct EscalaDeNotasView: View {
                     
                     HStack {
                         
-                        VStack(spacing: 2) {
-                            Text("Nota Minima")
-                                .font(.caption)
+                        VStack(spacing: 1) {
                             
-                            TextField("0", text: $nMinima)
-                                .modifier(TextFieldViewModifier())
-                                .focused($isFocused)
-                        }
-                        
-                        
-                        VStack(spacing: 2) {
                             Text("Nota Aprobacion")
                                 .font(.caption)
                             
@@ -95,11 +88,21 @@ struct EscalaDeNotasView: View {
                                 .focused($isFocused)
                         }
                         
+                        
+                        VStack(spacing: 1) {
+                            Text("Exigencia")
+                                .font(.caption)
+                            
+                            TextField("0", text: $nExigencia)
+                                .modifier(TextFieldViewModifier())
+                                .focused($isFocused)
+                        }
+                        
                     }
                     
                     HStack {
                         
-                        VStack(spacing: 2) {
+                        VStack(spacing: 1) {
                             Text("Puntaje Maximo")
                                 .font(.caption)
                             
@@ -113,13 +116,11 @@ struct EscalaDeNotasView: View {
                             
                     }
                     
-           
-                    NavigationLink {
-
-                        NotasView(puntajeMaximo: pMaximo, notaMaxima: nMaxima, notaMinima: nMinima, notaAprobacion: nAprobacion, notaExigencia: nExigencia)
-
+                    Button {
+                        
+                        escalaSheet.toggle()
+                        
                     } label: {
-
                         Text("Calcular \(Image(systemName: "paperplane"))")
                             .font(.title)
                             .frame(height: 70)
@@ -127,18 +128,25 @@ struct EscalaDeNotasView: View {
                             .background(.blue)
                             .foregroundColor(.white)
                             .cornerRadius(15)
-                            
+
                     }
-                    .padding(.init(top: 65, leading: 80, bottom:80, trailing: 80))
+                    .padding(.init(top: 20, leading: 80, bottom:80, trailing: 80))
+
                     
         
                 }
                 .padding(.top, 40)
-            } // ScrollView End
+            }
+        .scrollIndicators(.hidden)
+        
         .sheet(isPresented: $info) {
             
             InfoSheet()
             
+        }
+        
+        .sheet(isPresented: $escalaSheet) {
+            NotasView(puntajeMaximo: pMaximo, notaMaxima: nMaxima, notaMinima: nMinima, notaAprobacion: nAprobacion, notaExigencia: nExigencia)
         }
         
        

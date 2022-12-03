@@ -8,12 +8,35 @@
 import SwiftUI
 
 struct ViewTest: View {
+    
+    @State var buenaNota: Bool
+    
     var body: some View {
         
-        VStack {
-            Text("10 -> 3.5")
-                .modifier(NotaModifier(color: .red))
+        
+        HStack {
+            VStack {
+                ForEach(0..<10, id: \.self) { index in
+                    
+                    Text("\(index) -> 3.5")
+                        .modifier(NotaModifier(isRed: buenaNota))
+                }
+            }
+            
+            VStack {
+                ForEach(0..<10, id: \.self) { index in
+                    
+                    Text("\(index) -> 3.5")
+                        .modifier(NotaModifier(isRed: buenaNota))
+                    
+                }
+            }
         }
+    
+        
+            
+            
+        
         
         
     }
@@ -22,14 +45,17 @@ struct ViewTest: View {
 
 struct NotaModifier: ViewModifier {
     
-    var color: Color? 
+    var isRed: Bool = false
     
     func body(content: Content) -> some View {
         content
-            .frame(width: 100, height: 50)
+            .frame(width: 120, height: 60)
+            //.background(Color(isRed ? "malaNota" : "buenaNota"))
             .background(Color("textFieldBackground"))
             .cornerRadius(5)
-            .foregroundColor(color)
+            .foregroundColor(isRed ? .red : .black)
+            .padding(.horizontal)
+            .padding(.vertical, 2)
             
             
     }
@@ -39,6 +65,14 @@ struct NotaModifier: ViewModifier {
 
 struct EscalaModifiers_Previews: PreviewProvider {
     static var previews: some View {
-        ViewTest()
+        Group {
+            ViewTest(buenaNota: true)
+                
+            //ViewTest(buenaNota: false)
+        }
+        .previewLayout(.sizeThatFits)
+        
+        
+        
     }
 }
