@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
 
 class ProfileViewModel: ObservableObject {
     
     @Published var counter: Int = 0
     @Published var notasAgregadas = [String]()
     @Published var porcentajesAgregados = [String]()
+    @Published var reducedSize: Bool = false
     
     @Published var materias: [Materia] = []
     
@@ -20,7 +22,7 @@ class ProfileViewModel: ObservableObject {
         addRow(number: 4)
         
         
-        materias.append(Materia(name: "Programacion", notas: [6.1, 5.2, 4.8, 7.0], porcentajes: [35, 35, 20, 15], materiaColor: "red"))
+        materias.append(Materia(name: "Programacion", notas: [6.1, 5.2, 4.8, 7.0], porcentajes: [35, 30, 20, 15], materiaColor: "blackBackground"))
         counter = 2
     }
     
@@ -83,5 +85,51 @@ class ProfileViewModel: ObservableObject {
     
     
     
+    
+    func notasColor(color: String) -> Color {
+        
+        switch color {
+            
+        case "blueBackground":
+            return .white
+            
+        case "yellowBackground":
+            return .black
+            
+        case "blackBackground":
+            return .white
+            
+        case "pinkBackground":
+            return .white
+            
+       
+        
+            
+            
+        default:
+            return .black
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    func promedio(notas: [Float], porcentajes: [Int]) -> String {
+        
+        var sum: Float = 0.0
+        
+        for i in 0..<notas.count {
+            
+            var nota = notas[i]
+            var porcentaje = porcentajes[i]
+            
+            sum += ((nota * Float(porcentaje)) / 100)
+            
+        }
+        return "\(sum)"
+    }
     
 }

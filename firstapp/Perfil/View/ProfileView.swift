@@ -14,6 +14,7 @@ struct ProfileView: View {
     @State var name: String = "Guerra"
     
     
+    @State var log: String = "hola"
     
     var body: some View {
         
@@ -31,17 +32,23 @@ struct ProfileView: View {
             
             VStack {
                 HStack {
-                    
+                    // Esto hace las cartas mas pequenas, se hara desde una subview
                     Button {
-                        vm.addMateria(materiaName: "Innovacion", materiaColor: "red")
+                        vm.reducedSize.toggle()
                     } label: {
-                        Image(systemName: "minus.circle")
+                        Image(systemName: vm.reducedSize ? "book.circle.fill" : "book.circle")
+                            .font(.title)
+                            .tint(.black)
                     }
+                    
+                    Spacer()
 
                     
                     Text("Materias")
                         .font(.title)
                         .padding(.vertical, 20)
+                    
+                    Spacer()
                     
                     NavigationLink(destination: SaveNotas(viewModel: vm), label: {
                         
@@ -52,46 +59,8 @@ struct ProfileView: View {
                 }
                 
                 
-                ForEach(vm.materias) { materia in
-                    VStack(spacing: 40) {
-                        Text("\(materia.name)")
-                        
-                        Grid(verticalSpacing: 1) {
-            
-                            GridRow() {
-                                
-                                ForEach(materia.notas, id: \.self) { notita in
-                                    
-                                    Text("\(notita.description)")
-                                        .frame(width: 60, height: 50)
-                                        //.background(Color(notita.materiaColor))
-                                        .cornerRadius(10)
-
-                                    
-                                    
-                                }
-                                
-                                
-                            }
-                            GridRow() {
-                                ForEach(materia.porcentajes, id: \.self) { notita in
-                                    Text("\(notita.description)%")
-                                        .frame(width: 60, height: 40)
-                                        .foregroundColor(.gray)
-                                        
-                                        
-                                }
-                            }
-                        }
-                            
-                        
-                    }
-                    .frame(maxWidth: 300, minHeight: 200)
-                    .background(Color(materia.materiaColor))
-                    .cornerRadius(10)
-                    
-                }
                 
+                MateriaView(vm: vm)
                 
             }
             
@@ -103,6 +72,24 @@ struct ProfileView: View {
         }
         .environmentObject(vm)
     }
+    
+    func notasColor(color: String) -> Color {
+        
+        switch color {
+        case "blackBackground":
+            return .white
+            
+        case "pinkBackground":
+            return .white
+            
+        default:
+            return .black
+        }
+        
+        
+    }
+    
+
 }
 
 struct ProfileView_Previews: PreviewProvider {

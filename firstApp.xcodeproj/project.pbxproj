@@ -30,6 +30,7 @@
 		66AFDC37293A9BCB004F777D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFDC36293A9BCB004F777D /* ProfileViewModel.swift */; };
 		66AFDC39293A9C67004F777D /* MateriasModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFDC38293A9C67004F777D /* MateriasModel.swift */; };
 		66AFDC3B293AA2D2004F777D /* SaveNotas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFDC3A293AA2D2004F777D /* SaveNotas.swift */; };
+		66FF0086293D169A003FFCE1 /* MateriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FF0085293D169A003FFCE1 /* MateriaView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		66AFDC36293A9BCB004F777D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewModel.swift; path = firstapp/Perfil/ViewModel/ProfileViewModel.swift; sourceTree = SOURCE_ROOT; };
 		66AFDC38293A9C67004F777D /* MateriasModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MateriasModel.swift; path = firstapp/Perfil/Model/MateriasModel.swift; sourceTree = SOURCE_ROOT; };
 		66AFDC3A293AA2D2004F777D /* SaveNotas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SaveNotas.swift; path = firstapp/Perfil/View/SaveNotas.swift; sourceTree = SOURCE_ROOT; };
+		66FF0085293D169A003FFCE1 /* MateriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MateriaView.swift; path = firstapp/Perfil/Components/MateriaView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				66A92F7529382E940015CCC8 /* PerfilView.swift */,
+				66FF0085293D169A003FFCE1 /* MateriaView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				66AFDC31293A7D0B004F777D /* EscalaModifiers.swift in Sources */,
 				66A92F682938190F0015CCC8 /* NotaModel.swift in Sources */,
 				66A1CEEE2902CD8D007960A1 /* PromedioNotas.swift in Sources */,
+				66FF0086293D169A003FFCE1 /* MateriaView.swift in Sources */,
 				664405C729252C5D00C9187A /* EscalaViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

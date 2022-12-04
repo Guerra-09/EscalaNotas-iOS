@@ -11,10 +11,10 @@ struct SaveNotas: View {
     
     @ObservedObject var viewModel: ProfileViewModel
     
-    @State var name: String = "Matematicas"
+    @State var name: String = ""
     @State var notas: String = "3.4"// [Float]
     @State var porcentajes: String = "25" // [Float]
-    @State var colorBackground: String = "textFieldBackground"
+    @State var colorBackground: String = "blueBackground"
     
     @State var color: [String] = ["blueBackground", "greenBackground", "redBackground", "pinkBackground", "yellowBackground", "blackBackground"]
     
@@ -24,29 +24,40 @@ struct SaveNotas: View {
         
         ScrollView {
             
-            
-            TextField("Nombre materia", text: $name)
-                .frame(maxWidth: 300, minHeight: 60)
-                .background(Color("textFieldBackground"))
-                .cornerRadius(15)
-                .multilineTextAlignment(.center)
-            
-            ForEach(0..<viewModel.notasAgregadas.count, id: \.self) { index in
-                HStack {
-                    TextField("Notas", text: $viewModel.notasAgregadas[index])
-                        .frame(maxWidth: 150, minHeight: 60)
-                        .background(Color("textFieldBackground"))
-                        .cornerRadius(15)
-                        .multilineTextAlignment(.center)
-                    
-                    TextField("Porcentajes", text: $viewModel.porcentajesAgregados[index])
-                        .frame(maxWidth: 150, minHeight: 60)
-                        .background(Color("textFieldBackground"))
-                        .cornerRadius(15)
-                        .multilineTextAlignment(.center)
-                }
+            VStack {
+                Text("Agregar materia")
+                    .font(.title)
+                    .padding(.vertical, 60)
+                    .foregroundColor(viewModel.notasColor(color: colorBackground))
                 
+                
+                TextField("Nombre materia", text: $name)
+                    .frame(maxWidth: 300, minHeight: 60)
+                    .background(Color("textFieldBackground"))
+                    .cornerRadius(15)
+                    .multilineTextAlignment(.center)
+                
+                ForEach(0..<viewModel.notasAgregadas.count, id: \.self) { index in
+                    HStack {
+                        TextField("Notas", text: $viewModel.notasAgregadas[index])
+                            .frame(maxWidth: 150, minHeight: 60)
+                            .background(Color("textFieldBackground"))
+                            .cornerRadius(15)
+                            .multilineTextAlignment(.center)
+                        
+                        TextField("Porcentajes", text: $viewModel.porcentajesAgregados[index])
+                            .frame(maxWidth: 150, minHeight: 60)
+                            .background(Color("textFieldBackground"))
+                            .cornerRadius(15)
+                            .multilineTextAlignment(.center)
+                    }
+                    
+                }
             }
+            .padding(.bottom, 20)
+            .frame(maxWidth: 360, maxHeight: 560)
+            .background(Color(colorBackground))
+            .cornerRadius(15)
             
             
             /// Edit: Cambiar en un tiempo mas la estetica y posicionamiento de estos botones reqlos
@@ -69,23 +80,17 @@ struct SaveNotas: View {
             }
             
             
-            
+            // Para agregar los colores...
             HStack(spacing: 20) {
                 
                 ForEach(color, id: \.self) { colors in
                     
                     Button {
-                        
                         colorBackground = colors
-                        
                     } label: {
                         Circle()
                             .foregroundColor(Color(colors))
                     }
-
-
-                    
-                    
                 }
                 
             }
@@ -104,7 +109,13 @@ struct SaveNotas: View {
                 presentationMode.wrappedValue.dismiss()
                 
             } label: {
-                Text("Agregar")
+                
+                Text("Agregar \(Image(systemName: "paperplane"))")
+                    .font(.title2)
+                    .frame(width: 200, height: 80)
+                    .background(.blue)
+                    .cornerRadius(15)
+                    .foregroundColor(.white)
             }
             
 
@@ -116,6 +127,8 @@ struct SaveNotas: View {
         .onAppear {
             viewModel.clearVariables()
         }
+        
+        
         
     }
 }

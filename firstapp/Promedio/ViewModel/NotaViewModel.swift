@@ -61,7 +61,7 @@ class NotaViewModel: ObservableObject {
         
         
         // Preparando el resultado...
-        resultado = sum
+        resultado = sum / 10
         
         notaLog.removeAll()
         
