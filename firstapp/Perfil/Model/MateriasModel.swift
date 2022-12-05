@@ -16,5 +16,4 @@ struct Materia: Identifiable {
     let notas: [Float]
     let porcentajes: [Int]
     let materiaColor: String
-    // Promedio: Se calculara siempre con los porcentajes...
 }

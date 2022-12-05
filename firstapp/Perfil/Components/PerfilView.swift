@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PerfilPhoto: View {
+struct PerfilComponent: View {
     var body: some View {
         
         ZStack {
@@ -28,6 +28,6 @@ struct PerfilPhoto: View {
 
 struct PerfilView_Previews: PreviewProvider {
     static var previews: some View {
-        PerfilPhoto()
+        PerfilComponent()
     }
 }

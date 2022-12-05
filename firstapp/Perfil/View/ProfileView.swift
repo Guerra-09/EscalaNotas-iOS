@@ -16,6 +16,8 @@ struct ProfileView: View {
     
     @State var log: String = "hola"
     
+    @State var reduced: String = ""
+    
     var body: some View {
         
         
@@ -31,36 +33,48 @@ struct ProfileView: View {
             
             
             VStack {
-                HStack {
-                    // Esto hace las cartas mas pequenas, se hara desde una subview
-                    Button {
-                        vm.reducedSize.toggle()
-                    } label: {
-                        Image(systemName: vm.reducedSize ? "book.circle.fill" : "book.circle")
-                            .font(.title)
-                            .tint(.black)
-                    }
+                HStack() {
                     
-                    Spacer()
-
+                    
+                    NavigationLink(destination: Text("Ajustes"), label: {
+                        
+                        Image(systemName: "gear")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            
+                    })
                     
                     Text("Materias")
                         .font(.title)
                         .padding(.vertical, 20)
+                        .padding(.horizontal, 80)
                     
-                    Spacer()
+                    
+                
                     
                     NavigationLink(destination: SaveNotas(viewModel: vm), label: {
                         
-                        Image(systemName: "plus.circle")
+                        Image(systemName: "plus.square")
                             .resizable()
                             .frame(width: 25, height: 25)
+                            
+                            
                     })
+                    
+                    
                 }
                 
                 
+                VStack {
+                    ForEach(vm.materias) { materia in
+                        
+                        MateriaComponent(materiaName: materia.name , textColor: vm.notasColor(color: "\(materia.materiaColor)") , materiaNotas: materia.notas, materiaPorcentajes: materia.porcentajes, materiaColor: materia.materiaColor, promedio: "\(vm.promedio(notas: materia.notas, porcentajes: materia.porcentajes))" , reducedSize: false)
+                        
+                    }
+                }
                 
-                MateriaView(vm: vm)
+
+                
                 
             }
             

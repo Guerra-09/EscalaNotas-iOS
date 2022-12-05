@@ -22,7 +22,7 @@ class ProfileViewModel: ObservableObject {
         addRow(number: 4)
         
         
-        materias.append(Materia(name: "Programacion", notas: [6.1, 5.2, 4.8, 7.0], porcentajes: [35, 30, 20, 15], materiaColor: "blackBackground"))
+        materias.append(contentsOf: [Materia(name: "Programacion", notas: [6.1, 5.2, 4.8, 7.0], porcentajes: [35, 30, 20, 15], materiaColor: "blackBackground"), Materia(name: "Innovacion", notas: [5.0, 5.8, 5.8, 6.2], porcentajes: [15, 25, 30, 35], materiaColor: "yellowBackground")])
         counter = 2
     }
     
