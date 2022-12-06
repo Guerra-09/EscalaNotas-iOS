@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22C5059b" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Asignaturas" representedClassName="Asignaturas" syncable="YES" codeGenerationType="class">
+        <attribute name="materiaColor" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="notas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Notas" inverseName="asignaturas" inverseEntity="Notas"/>
+        <relationship name="porcentajes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Porcentajes" inverseName="asignaturas" inverseEntity="Porcentajes"/>
+    </entity>
+    <entity name="Notas" representedClassName="Notas" syncable="YES" codeGenerationType="class">
+        <attribute name="data" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="asignaturas" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Asignaturas" inverseName="notas" inverseEntity="Asignaturas"/>
+    </entity>
+    <entity name="Porcentajes" representedClassName="Porcentajes" syncable="YES" codeGenerationType="class">
+        <attribute name="porcentaje" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="asignaturas" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Asignaturas" inverseName="porcentajes" inverseEntity="Asignaturas"/>
+    </entity>
+</model>

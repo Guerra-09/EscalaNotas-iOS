@@ -11,8 +11,15 @@ import SwiftUI
 struct FirstAppApp: App {
     var body: some Scene {
         WindowGroup {
+//            NavigationView {
+//                MainView()
+//            }
+            
+            
+            
+            // For testing CoreData
             NavigationView {
-                MainView()
+                CoreData()
             }
             
         }

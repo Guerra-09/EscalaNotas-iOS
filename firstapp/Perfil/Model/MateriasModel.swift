@@ -12,7 +12,6 @@ struct Materia: Identifiable {
     
     let id = UUID().uuidString
     let name: String
-    let nroNotas: Int = 0
     let notas: [Float]
     let porcentajes: [Int]
     let materiaColor: String
